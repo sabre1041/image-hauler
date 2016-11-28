@@ -11,7 +11,7 @@ import (
 
 func Pull(target string, sourceTarget RegistryTarget) error {
 
-	hub, err := registry.New(sourceTarget.Url, sourceTarget.Username, sourceTarget.Password)
+	hub, err := registry.NewInsecure(sourceTarget.Url, sourceTarget.Username, sourceTarget.Password)
 
 	if err != nil {
 		return fmt.Errorf("Error Connecting to Registry to Pull Image", err)

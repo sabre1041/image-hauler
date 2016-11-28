@@ -47,7 +47,7 @@ func Push(target string, sourceTarget, destinationTarget RegistryTarget) error {
 
 	}
 
-	hub, err := registry.New(destinationTarget.Url, destinationTarget.Username, destinationTarget.Password)
+	hub, err := registry.NewInsecure(destinationTarget.Url, destinationTarget.Username, destinationTarget.Password)
 
 	if err != nil {
 		return fmt.Errorf("Error Connecting to Registry to Push Image %v", err)
